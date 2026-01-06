@@ -28,5 +28,6 @@ public class MerchantDailyReport extends Base {
 		SettlementReportMenu.click();
 		Assert.assertEquals(driver.getCurrentUrl(), MerchantBaseUrl+"SettlementReport.do");
 	}
+	
 
 }
