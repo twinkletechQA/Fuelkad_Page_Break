@@ -227,11 +227,35 @@ public class Base {
 	
 	public void SelectRandomDropdownFieldvalue(WebElement dropdownField) {
 		 
-	   	 Select s = new Select(dropdownField);
+/*	   	 Select s = new Select(dropdownField);
 	   	 List<WebElement> options = s.getOptions();
 	   	 Random rand = new Random();
 	   	 int randomIndex = rand.nextInt(options.size() - 1) + 1;
 	   	 s.selectByIndex(randomIndex);
-	    }
+ Note : Hided by Vignesh for Sometimes breaking the flow while 0 size came
+ */
+		 Select select = new Select(dropdownField);
+		    List<WebElement> options = select.getOptions();
+
+		    if (options.size() == 0) {
+		        System.out.println("Dropdown has no options");
+		        return;
+		    }
+
+		    // If only one option → select it
+		    if (options.size() == 1) {
+		        select.selectByIndex(0);
+		        System.out.println("Only one option found, selected index 0");
+		        return;
+		    }
+
+		    // If multiple options → select random (excluding default index 0)
+		    Random random = new Random();
+		    int randomIndex = random.nextInt(options.size() - 1) + 1;
+
+		    select.selectByIndex(randomIndex);
+		    System.out.println("Random option selected: index " + randomIndex);
+		
+	}
 
 }

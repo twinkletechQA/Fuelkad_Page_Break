@@ -8,12 +8,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import baseclass.Base;
+import individualPages.MerDailyReport;
+import individualPages.MerFuelStationDevices;
 import individualPages.MerSettlementReport;
 import individualPages.MerTransactionDetails;
+import individualPages.MerchantUsers;
 import pages.AdminPageBreak;
 import pages.LoginPage;
 
-public class MerchantpageBreakTest extends Base{
+public class MerchantpageBreakTest extends Base {
 
 	public MerchantpageBreakTest() {
 		super();
@@ -26,6 +29,10 @@ public class MerchantpageBreakTest extends Base{
 	AdminPageBreak adminPageBreak;
 	MerTransactionDetails merTransactionDetails;
 	MerSettlementReport merSettlementReport;
+	MerDailyReport merDailyReport;
+	MerFuelStationDevices merFuelStationDevices;
+
+	MerchantUsers merchantUsers;
 
 	@BeforeClass
 	public void setup() {
@@ -33,7 +40,7 @@ public class MerchantpageBreakTest extends Base{
 		driver = initializeBrowserAndOpenApplicationURL(prop.getProperty("browserName"));
 
 	}
-	
+
 	@AfterClass
 	public void tearDown() {
 
@@ -44,20 +51,18 @@ public class MerchantpageBreakTest extends Base{
 	@Test
 	public void dashboardPageBreak() throws InterruptedException, IOException {
 
-		// try {
-
-	//	setup();
+		// setup();
 
 		loginPage = new LoginPage(driver);
 		adminPageBreak = new AdminPageBreak(driver);
 
 		loginPage.login(prop.getProperty("MerchantUsername"), prop.getProperty("MerchantPassword"));
-	//	adminPageBreak.AdmincheckBreak();
+		// adminPageBreak.AdmincheckBreak();
 	}
 
 //	@Test(priority = 2)	
 	public void CheckTransactionDetailsTest() {
-		
+
 		merTransactionDetails = new MerTransactionDetails(driver);
 		merTransactionDetails.clickOnMenu();
 		merTransactionDetails.clickCSV_Download();
@@ -66,18 +71,61 @@ public class MerchantpageBreakTest extends Base{
 		merTransactionDetails.clickOnSearchBtn();
 		merTransactionDetails.clickOnResetBtn();
 	}
-	
-    @Test(priority = 3)	
+
+//  @Test(priority = 3)	
 	public void CheckSettlementReportTest() {
-		
-    	merSettlementReport = new MerSettlementReport(driver);
-    	merSettlementReport.clickOnMenu();
-    	merSettlementReport.clickCSV_Download();
-    	merSettlementReport.clickPDF_Download();
-    	merSettlementReport.chooseFilterDateAndSearch();
-    	merSettlementReport.clickOnSearchBtn();
-    	merSettlementReport.clickOnResetBtn();
+
+		merSettlementReport = new MerSettlementReport(driver);
+		merSettlementReport.clickOnMenu();
+		merSettlementReport.clickCSV_Download();
+		merSettlementReport.clickPDF_Download();
+		merSettlementReport.chooseFilterDateAndSearch();
+		merSettlementReport.clickOnSearchBtn();
+		merSettlementReport.clickOnResetBtn();
 	}
 
+//  @Test(priority = 4)
+	public void checkDailyReportTest() {
+
+		merDailyReport = new MerDailyReport(driver);
+		merDailyReport.clickOnMenu();
+		merDailyReport.clickOnSearchBtn();
+		merDailyReport.clickOnExportPDF();
+		merDailyReport.clickOnExportExcel();
+		merDailyReport.clickOnPeriodMenu();
+		merDailyReport.clickOnCustomerUsageMenu();
+		merDailyReport.clickOnCustomerPurchasesMenu();
+
+		merDailyReport.chooseFilterDateAndSearch();
+		merDailyReport.chooseFilterMerchantDDAndSearch();
+		merDailyReport.chooseFilterMerchantStationDDAndSearch();
+
+		merDailyReport.clickOnExportPDF();
+		merDailyReport.clickOnExportExcel();
+		merDailyReport.clickOnPeriodMenu();
+		merDailyReport.clickOnCustomerUsageMenu();
+		merDailyReport.clickOnCustomerPurchasesMenu();
+	}
+
+	@Test(priority = 5)
+	public void checkFuelStationDevicesTest() {
+
+		merFuelStationDevices = new MerFuelStationDevices(driver);
+		merFuelStationDevices.clickOnMenu();
+		merFuelStationDevices.clickOnAddManageDevice();
+		merFuelStationDevices.clickOnDeviceListEdit();
+	}
+
+	@Test(priority = 6)
+	private void MerchantUsersTest() {
+
+		merchantUsers = new MerchantUsers(driver);
+		merchantUsers.clickOnMenu();
+		merchantUsers.ClickSaveButton();
+		merchantUsers.ClickCancelButton();
+		merchantUsers.clickCSV_Download();
+		merchantUsers.clickPDF_Download();
+
+	}
 
 }
