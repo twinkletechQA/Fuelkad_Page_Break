@@ -34,6 +34,7 @@ public class AdminpageBreakTest extends Base {
 
 	@AfterClass
 	public void tearDown() {
+		
 		softAssert.assertAll();
 		driver.quit();
 

@@ -1,5 +1,7 @@
 package individualPages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +38,12 @@ public class MerFuelPrice extends Base {
 	@FindBy(xpath ="(//button[@type='reset'])[2]")
 	private WebElement ViewHistoryOFFuelPriceBtn;
 	
+	@FindBy(xpath = "//*[@id='example']//td[not(contains(text(),'No data'))]/parent::tr")
+	private List<WebElement> FuelPriceList;
+
+	@FindBy(xpath = "//*[@id='example']//tbody//a")
+	private List<WebElement> FuelPriceListEditBtns;
+	
 	public MerFuelPrice(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -47,7 +55,7 @@ public class MerFuelPrice extends Base {
 		Assert.assertEquals(driver.getCurrentUrl(), MerchantBaseUrl + "SetFuelPriceByMerchant.do");
 	}
 	
-	public void clockOnSaveBtn() {
+	public void clickOnSaveBtn() {
 		saveBtn.click();
 	}
 	
@@ -65,11 +73,19 @@ public class MerFuelPrice extends Base {
 	
 	public void clickOnHistyoryOfFuelPrice() {
 		ViewHistoryOFFuelPriceBtn.click();
-		Assert.assertEquals(driver.getCurrentUrl(), MerchantBaseUrl + "DownloadFuelAmountHistory.do");		
-		Assert.assertEquals(FuelPriceHistoryTitle.getText(), "Fuel Price History");
+		verifyUrlIsEqual(MerchantBaseUrl + "DownloadFuelAmountHistory.do");
+		verifyIsEqual(FuelPriceHistoryTitle.getText(), "Fuel Price History");
 		clickCSV_Download();
 		clickPDF_Download();
 		clickOnCancelBtn();
+	}
+	
+	public void clickOnFuelPriceListEdit() {
+		for (int j = 0; j < FuelPriceList.size(); j++) {
+			FuelPriceListEditBtns.get(j).click();
+		}
+		cancelBtn.click();
+		verifyUrlIsEqual(MerchantBaseUrl + "SetFuelPriceByMerchant.do");
 	}
 
 }

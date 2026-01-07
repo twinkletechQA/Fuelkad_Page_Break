@@ -265,7 +265,20 @@ public class Base {
 	    String actualUrl = driver.getCurrentUrl();
 
 	    if (!actualUrl.equals(expectedUrl)) {
-	        System.out.println("URL MISMATCH DETECTED" +"EXPECTED URL:"+ expectedUrl +"ACTUAL URL:"+ actualUrl);
+	        System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	       
+	    }
+
+	    softAssert.assertEquals(
+	            actualUrl,
+	            expectedUrl
+	    );
+	}
+	
+	protected void verifyIsEqual(String actualUrl, String expectedUrl) {
+
+	    if (!actualUrl.equals(expectedUrl)) {
+	    	System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
 	       
 	    }
 

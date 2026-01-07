@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-07T15:21:07 IST" name="Default suite" finished-at="2026-01-07T15:21:29 IST" duration-ms="21710">
+  <suite started-at="2026-01-07T16:08:04 IST" name="Default suite" finished-at="2026-01-07T16:08:49 IST" duration-ms="44905">
     <groups>
     </groups>
-    <test started-at="2026-01-07T15:21:07 IST" name="Default test" finished-at="2026-01-07T15:21:29 IST" duration-ms="21710">
-      <class name="testcase.AdminpageBreakTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcase.AdminpageBreakTest@338fc1d8]" started-at="2026-01-07T15:21:07 IST" name="setup" finished-at="2026-01-07T15:21:20 IST" duration-ms="13079" status="PASS">
+    <test started-at="2026-01-07T16:08:04 IST" name="Default test" finished-at="2026-01-07T16:08:49 IST" duration-ms="44905">
+      <class name="testcase.MerchantpageBreakTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcase.MerchantpageBreakTest@f1da57d]" started-at="2026-01-07T16:08:05 IST" name="setup" finished-at="2026-01-07T16:08:14 IST" duration-ms="9905" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="dashboardPageBreak()[pri:0, instance:testcase.AdminpageBreakTest@338fc1d8]" started-at="2026-01-07T15:21:20 IST" name="dashboardPageBreak" finished-at="2026-01-07T15:21:23 IST" duration-ms="2287" status="PASS">
+        <test-method signature="dashboardPageBreak()[pri:1, instance:testcase.MerchantpageBreakTest@f1da57d]" started-at="2026-01-07T16:08:15 IST" name="dashboardPageBreak" finished-at="2026-01-07T16:08:19 IST" duration-ms="4715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dashboardPageBreak -->
-        <test-method signature="checkDashboardTest()[pri:2, instance:testcase.AdminpageBreakTest@338fc1d8]" started-at="2026-01-07T15:21:23 IST" name="checkDashboardTest" finished-at="2026-01-07T15:21:28 IST" duration-ms="4988" status="PASS">
+        <test-method signature="checkSetFuelPriceTest()[pri:7, instance:testcase.MerchantpageBreakTest@f1da57d]" started-at="2026-01-07T16:08:19 IST" name="checkSetFuelPriceTest" finished-at="2026-01-07T16:08:48 IST" duration-ms="28531" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkDashboardTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcase.AdminpageBreakTest@338fc1d8]" started-at="2026-01-07T15:21:28 IST" name="tearDown" finished-at="2026-01-07T15:21:29 IST" duration-ms="1215" status="PASS">
+        </test-method> <!-- checkSetFuelPriceTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcase.MerchantpageBreakTest@f1da57d]" started-at="2026-01-07T16:08:48 IST" name="tearDown" finished-at="2026-01-07T16:08:49 IST" duration-ms="1578" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcase.AdminpageBreakTest -->
+      </class> <!-- testcase.MerchantpageBreakTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
