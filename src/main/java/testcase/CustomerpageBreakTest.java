@@ -269,5 +269,9 @@ public class CustomerpageBreakTest extends Base {
 		custDetailedReport.clickResetButton();
 
 	}
+	
+	private void Cust() {
+		
+	}
 
 }
