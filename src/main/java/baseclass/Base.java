@@ -58,7 +58,7 @@ public class Base {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			// System.setProperty("webdriver.chrome.driver",
 			// "C:\\Users\\Vignesh\\eclipse-workspace\\Fuelkad_Project_Page_Break\\Drivers\\chromedriver.exe");
-
+//test
 			ChromeOptions options = new ChromeOptions();
 			Map<String, Object> prefs = new HashMap<>();
 			prefs.put("download.default_directory", "D:\\Vignesh_R\\TSS Projects\\Automation download files"); // Set
