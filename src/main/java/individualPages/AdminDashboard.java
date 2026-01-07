@@ -10,8 +10,7 @@ import baseclass.Base;
 
 public class AdminDashboard extends Base {
 
-	static WebDriver driver;
-
+	
 	@FindBy(xpath = "//*[@id=\"navbarsExample03\"]/ul/li[1]/a")
 	private WebElement DASHBOARD_MENU;
 
@@ -34,21 +33,33 @@ public class AdminDashboard extends Base {
 	private WebElement FILTER_TO_DATE;
 
 	public AdminDashboard(WebDriver driver) {
-		AdminDashboard.driver = driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 
-	public void testCase1() {
+	public void ClickOnMenu() {
 		DASHBOARD_MENU.click();
 		SUB_DASHBOARD_MENU.click();
+		
+	}
+	public void SelectDatesFilter() {
 		FILTER_DATE_FIELD.click();
 		FILTER_FROM_DATE.click();
 		FILTER_TO_DATE.click();
+
+	}
+	
+	public void ClickSearchButton() {
 		SEARCH_BTN.click();
 		Assert.assertEquals(checkURL(driver), "SearchFuelCardUsageStatistics.do");
+
+	}
+	
+	public void ClickResetButton() {
 		RESET_BTN.click();
 		Assert.assertEquals(checkURL(driver), "AdminDashboard.do");
+
 	}
 
 }

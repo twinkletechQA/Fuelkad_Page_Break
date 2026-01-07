@@ -117,8 +117,7 @@ public class MerchantpageBreakTest extends Base {
 	}
 
 	@Test(priority = 6)
-	private void MerchantUsersTest() {
-
+	private void MerchantUsersTest() {		
 		merchantUsers = new MerchantUsers(driver);
 		merchantUsers.clickOnMenu();
 		merchantUsers.ClickSaveButton();

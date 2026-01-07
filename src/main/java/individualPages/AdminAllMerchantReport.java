@@ -66,25 +66,70 @@ public class AdminAllMerchantReport extends Base {
 		DASHBOARD_MENU.click();
 		SUB_DASHBOARD_MENU.click();
 		Assert.assertEquals(checkURL(driver), "GetMerchantReport.do");
+	}
+	
+	private void MerchantFilterDropdown() {
 		selectByIndex(FILTER_MERCHANT_DD_FIELD, 1);
+	}
+	
+	private void ClickSearchButton() {
 		SEARCH_BTN.click();
 		Assert.assertEquals(checkURL(driver), "SearchMerchantReport.do");
+	}
+	
+	private void ClickResetButton() {
 		RESET_BTN.click();
 		Assert.assertEquals(checkURL(driver), "GetMerchantReport.do");
-		EXPORT_PDF_FIELD.click();
-		EXPORT_CSV_FIELD.click();
 
-		WEEKLY_PERIOD_BTN.click();
-		WEEKLY_PERIOD_EXPORT_CSV_FIELD.click();
+	}
+	
+	private void ClickPDF() {
+    EXPORT_PDF_FIELD.click();
+		
+	}
+		
+	private void ClickCSV() {
+    EXPORT_CSV_FIELD.click();
+		
+	}
+	
+	
+	private void WeeklyPeriodButton() {
+	WEEKLY_PERIOD_BTN.click();
+	WEEKLY_PERIOD_EXPORT_CSV_FIELD.click();	
+		
+	}
+	private void CustomerUsageButton() {
+	CUSTOMER_USAGE_BTN.click();
+	CUSTOMER_USAGE_EXPORT_CSV_FIELD.click();		
+		
+	}
+	
 
-		CUSTOMER_USAGE_BTN.click();
-		CUSTOMER_USAGE_EXPORT_CSV_FIELD.click();
+	private void CustomerLoadTransactions() {
+	CUSTOMER_LOAD_TRANS_BTN.click();
+	CUSTOMER_LOAD_TRANS_EXPORT_CSV_FIELD.click();
+		
+		
+	}
+	
+	private void CustomerPurchases() {
+	CUSTOMER_PURCHASE_BTN.click();
+	CUSTOMER_PURCHASE_EXPORT_CSV_FIELD.click();		
+		
+	}
+	private void TaxInvoiceCommissions() {
+		
+		
+	}
+		
 
-		CUSTOMER_LOAD_TRANS_BTN.click();
-		CUSTOMER_LOAD_TRANS_EXPORT_CSV_FIELD.click();
 
-		CUSTOMER_PURCHASE_BTN.click();
-		CUSTOMER_PURCHASE_EXPORT_CSV_FIELD.click();
+
+
+
+
+
 
 	}
 
