@@ -9,6 +9,8 @@ import org.testng.Assert;
 import baseclass.Base;
 
 public class AdminDashboard extends Base {
+	
+	String AdminBaseUrl = prop.getProperty("adminUrl");
 
 	@FindBy(xpath = "//*[@id=\"navbarsExample03\"]/ul/li[1]/a")
 	private WebElement DASHBOARD_MENU;
@@ -44,9 +46,11 @@ public class AdminDashboard extends Base {
 		FILTER_FROM_DATE.click();
 		FILTER_TO_DATE.click();
 		SEARCH_BTN.click();
-		Assert.assertEquals(checkURL(driver), "SearchFuelCardUsageStatistics.do");
+		verifyUrlIsEqual(AdminBaseUrl + "SearchFuelCardUsageStatisticsst.do");
+//		Assert.assertEquals(driver.getCurrentUrl(), AdminBaseUrl + "SearchFuelCardUsageStatisticsst.do");
 		RESET_BTN.click();
-		Assert.assertEquals(checkURL(driver), "AdminDashboard.do");
+//		softAssert.assertEquals(driver.getCurrentUrl(), AdminBaseUrl + "AdminDashboard.do");
+		verifyUrlIsEqual(AdminBaseUrl + "AdminDashboard.do");
 	}
 
 }
