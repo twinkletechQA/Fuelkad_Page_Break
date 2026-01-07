@@ -10,8 +10,6 @@ import baseclass.Base;
 
 public class AdminDashboard extends Base {
 
-	static WebDriver driver;
-
 	@FindBy(xpath = "//*[@id=\"navbarsExample03\"]/ul/li[1]/a")
 	private WebElement DASHBOARD_MENU;
 
@@ -34,7 +32,7 @@ public class AdminDashboard extends Base {
 	private WebElement FILTER_TO_DATE;
 
 	public AdminDashboard(WebDriver driver) {
-		AdminDashboard.driver = driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 

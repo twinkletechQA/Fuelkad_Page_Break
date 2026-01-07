@@ -12,6 +12,7 @@ import individualPages.MerDailyReport;
 import individualPages.MerFuelStationDevices;
 import individualPages.MerSettlementReport;
 import individualPages.MerTransactionDetails;
+import individualPages.MerUserAccountSettings;
 import individualPages.MerchantUsers;
 import pages.AdminPageBreak;
 import pages.LoginPage;
@@ -31,6 +32,7 @@ public class MerchantpageBreakTest extends Base {
 	MerSettlementReport merSettlementReport;
 	MerDailyReport merDailyReport;
 	MerFuelStationDevices merFuelStationDevices;
+	MerUserAccountSettings merUserAccountSettings;
 
 	MerchantUsers merchantUsers;
 
@@ -114,6 +116,15 @@ public class MerchantpageBreakTest extends Base {
 		merFuelStationDevices.clickOnMenu();
 		merFuelStationDevices.clickOnAddManageDevice();
 		merFuelStationDevices.clickOnDeviceListEdit();
+	}
+	
+	@Test(priority = 6)
+	public void checkUserAccountSettingsTest() {
+		merUserAccountSettings = new MerUserAccountSettings(driver);
+		merUserAccountSettings.clickOnMenu();
+		merUserAccountSettings.clickOnPassResetLink();
+		merUserAccountSettings.clickSaveBtn();
+		merUserAccountSettings.clickBackBtn();
 	}
 
 	@Test(priority = 6)
