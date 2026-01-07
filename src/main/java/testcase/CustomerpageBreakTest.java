@@ -33,7 +33,7 @@ public class CustomerpageBreakTest extends Base {
 //
 //	}
 
-	
+	// Test
 	LoginPage loginPage;
 	AdminPageBreak adminPageBreak;
 	CustAccountSummary custAccountSummary;
