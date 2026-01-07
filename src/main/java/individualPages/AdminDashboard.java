@@ -9,8 +9,9 @@ import org.testng.Assert;
 import baseclass.Base;
 
 public class AdminDashboard extends Base {
-
 	
+	String AdminBaseUrl = prop.getProperty("adminUrl");
+
 	@FindBy(xpath = "//*[@id=\"navbarsExample03\"]/ul/li[1]/a")
 	private WebElement DASHBOARD_MENU;
 
@@ -57,9 +58,10 @@ public class AdminDashboard extends Base {
 	}
 	
 	public void ClickResetButton() {
+		verifyUrlIsEqual(AdminBaseUrl + "SearchFuelCardUsageStatisticsst.do");
 		RESET_BTN.click();
 		Assert.assertEquals(checkURL(driver), "AdminDashboard.do");
-
+		verifyUrlIsEqual(AdminBaseUrl + "AdminDashboard.do");
 	}
 
 }

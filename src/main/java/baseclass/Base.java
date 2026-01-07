@@ -30,9 +30,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class Base {
 
+	public SoftAssert softAssert;
 	public WebDriver driver;
 	public static Properties prop;
 	public static Properties dataProp;
@@ -40,7 +42,7 @@ public class Base {
 	public static Properties titleName;
 
 	public Base() {
-
+		softAssert = new SoftAssert();
 		prop = new Properties();
 		File propFile = new File(System.getProperty("user.dir") + "\\src\\main\\java\\config\\config.properties");
 
@@ -256,6 +258,34 @@ public class Base {
 		    select.selectByIndex(randomIndex);
 		    System.out.println("Random option selected: index " + randomIndex);
 		
+	}
+	
+	protected void verifyUrlIsEqual(String expectedUrl) {
+
+	    String actualUrl = driver.getCurrentUrl();
+
+	    if (!actualUrl.equals(expectedUrl)) {
+	        System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	       
+	    }
+
+	    softAssert.assertEquals(
+	            actualUrl,
+	            expectedUrl
+	    );
+	}
+	
+	protected void verifyIsEqual(String actualUrl, String expectedUrl) {
+
+	    if (!actualUrl.equals(expectedUrl)) {
+	    	System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	       
+	    }
+
+	    softAssert.assertEquals(
+	            actualUrl,
+	            expectedUrl
+	    );
 	}
 
 }

@@ -27,34 +27,32 @@ public class AdminpageBreakTest extends Base {
 	AdminDashboard adminDashboard;
 	AdminFinanceReport adminFinanceReport;
 
- 
 	@BeforeClass
 	public void setup() {
  
 		driver = initializeBrowserAndOpenApplicationURL(prop.getProperty("browserName"));
  
 	}
- 
+
 	@AfterClass
 	public void tearDown() {
- 
+		
+		softAssert.assertAll();
 		driver.quit();
  
 	}
  
 	@Test
 	public void dashboardPageBreak() throws InterruptedException, IOException {
- 
-		// try {
- 
+  
 	//	setup();
- 
+
 		loginPage = new LoginPage(driver);
 		adminPageBreak = new AdminPageBreak(driver);
  
 		loginPage.login(prop.getProperty("AdminUsername"), prop.getProperty("AdminPassword"));
 	//	adminPageBreak.AdmincheckBreak();
- 
+
 	}
 	
 	@Test(priority = 2)	
@@ -73,7 +71,7 @@ public class AdminpageBreakTest extends Base {
 		adminFinanceReport.ClickSearchButton();
 		adminFinanceReport.ClickExport();
 		adminFinanceReport.ClickResetButton();
- 
+ 	
 }
 	
 	

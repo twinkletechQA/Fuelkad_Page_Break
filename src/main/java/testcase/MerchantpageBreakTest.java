@@ -9,9 +9,11 @@ import org.testng.annotations.Test;
 
 import baseclass.Base;
 import individualPages.MerDailyReport;
+import individualPages.MerFuelPrice;
 import individualPages.MerFuelStationDevices;
 import individualPages.MerSettlementReport;
 import individualPages.MerTransactionDetails;
+import individualPages.MerUserAccountSettings;
 import individualPages.MerchantUsers;
 import pages.AdminPageBreak;
 import pages.LoginPage;
@@ -31,6 +33,8 @@ public class MerchantpageBreakTest extends Base {
 	MerSettlementReport merSettlementReport;
 	MerDailyReport merDailyReport;
 	MerFuelStationDevices merFuelStationDevices;
+	MerUserAccountSettings merUserAccountSettings;
+	MerFuelPrice merFuelPrice;
 
 	MerchantUsers merchantUsers;
 
@@ -43,12 +47,13 @@ public class MerchantpageBreakTest extends Base {
 
 	@AfterClass
 	public void tearDown() {
-
+		
+		softAssert.assertAll();
 		driver.quit();
 
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void dashboardPageBreak() throws InterruptedException, IOException {
 
 		// setup();
@@ -107,7 +112,7 @@ public class MerchantpageBreakTest extends Base {
 		merDailyReport.clickOnCustomerPurchasesMenu();
 	}
 
-	@Test(priority = 5)
+//	@Test(priority = 5)
 	public void checkFuelStationDevicesTest() {
 
 		merFuelStationDevices = new MerFuelStationDevices(driver);
@@ -115,16 +120,37 @@ public class MerchantpageBreakTest extends Base {
 		merFuelStationDevices.clickOnAddManageDevice();
 		merFuelStationDevices.clickOnDeviceListEdit();
 	}
+	
+//	@Test(priority = 6)
+	public void checkUserAccountSettingsTest() {
+		merUserAccountSettings = new MerUserAccountSettings(driver);
+		merUserAccountSettings.clickOnMenu();
+		merUserAccountSettings.clickOnPassResetLink();
+		merUserAccountSettings.clickSaveBtn();
+		merUserAccountSettings.clickBackBtn();
+	}
+	
+	@Test(priority = 7)
+	public void checkSetFuelPriceTest() {
+		merFuelPrice = new MerFuelPrice(driver);
+		merFuelPrice.clickOnMenu();
+		merFuelPrice.clickOnSaveBtn();
+		merFuelPrice.clickOnCancelBtn();
+		merFuelPrice.clickCSV_Download();
+		merFuelPrice.clickPDF_Download();
+		merFuelPrice.clickOnHistyoryOfFuelPrice();
+		merFuelPrice.clickOnFuelPriceListEdit();		
+	}
 
-	@Test(priority = 6)
-	private void MerchantUsersTest() {		
+//	@Test(priority = 8)
+	private void MerchantUsersTest() {
+
 		merchantUsers = new MerchantUsers(driver);
 		merchantUsers.clickOnMenu();
 		merchantUsers.ClickSaveButton();
 		merchantUsers.ClickCancelButton();
 		merchantUsers.clickCSV_Download();
 		merchantUsers.clickPDF_Download();
-
 	}
 
 }
