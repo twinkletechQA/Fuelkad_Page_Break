@@ -36,15 +36,30 @@ public class AdminFinanceReport extends Base {
 	
 	
 
-	public void testCase1() {
+	public void ClickOnMenu() {
 		DASHBOARD_MENU.click();
 		SUB_DASHBOARD_MENU.click();
-		Assert.assertEquals(checkURL(driver), "GetFinanceReport.do");
+
+
+	}
+	
+	public void ClickExport() {
+		EXPORT_CSV_FIELD.click();	
+
+	}
+	
+	public void ClickSearchButton() {
 		SEARCH_BTN.click();
 		Assert.assertEquals(checkURL(driver), "SearchFinanceReport.do");
+		
+		
+	}
+	public void ClickResetButton() {
 		RESET_BTN.click();
 		Assert.assertEquals(checkURL(driver), "GetFinanceReport.do");
-		EXPORT_CSV_FIELD.click();
+	
+	
 	}
+	
 
 }
