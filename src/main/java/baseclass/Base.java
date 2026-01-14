@@ -1,8 +1,5 @@
 package baseclass;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
@@ -17,6 +14,7 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -29,8 +27,9 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+
+import Utility.PaginationUtils;
 
 public class Base {
 
@@ -261,14 +260,14 @@ public class Base {
 	}
 	
 	protected void verifyUrlIsEqual(String expectedUrl, String action) {
-
+		 
 	    String actualUrl = driver.getCurrentUrl();
-
+ 
 	    if (!actualUrl.equals(expectedUrl)) {
 	        System.out.println(action+ ": URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
 	       
 	    }
-
+ 
 	    softAssert.assertEquals(
 	            actualUrl,
 	            expectedUrl
@@ -276,16 +275,86 @@ public class Base {
 	}
 	
 	protected void verifyIsEqual(String actualUrl, String expectedUrl,String action) {
-
+		 
 	    if (!actualUrl.equals(expectedUrl)) {
 	        System.out.println(action+ ": URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
 	       
 	    }
-
+ 
 	    softAssert.assertEquals(
 	            actualUrl,
 	            expectedUrl
 	    );
+	}
+	
+	protected void verifyIsEqual(String actualUrl, String expectedUrl) {
+ 
+	    if (!actualUrl.equals(expectedUrl)) {
+	        System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	       
+	    }
+ 
+	    softAssert.assertEquals(
+	            actualUrl,
+	            expectedUrl
+	    );
+	}
+	
+	protected void verifyUrlIsEqual(String expectedUrl) {
+		 
+	    String actualUrl = driver.getCurrentUrl();
+ 
+	    if (!actualUrl.equals(expectedUrl)) {
+	        System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	       
+	    }
+ 
+	    softAssert.assertEquals(
+	            actualUrl,
+	            expectedUrl
+	    );
+	}
+	
+	
+	
+	public void waitForTableRefresh(List<WebElement> oldRows) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.stalenessOf(oldRows.get(0)));
+	}
+	
+	public void ClickOnPaginationButtonUntilDisabled() {
+		PaginationUtils paginationUtils = new PaginationUtils(driver);
+		paginationUtils.clickPagination("last");
+		paginationUtils.clickPagination("first");
+		paginationUtils.clickPagination("next");
+		paginationUtils.clickPagination("previous");
+	}
+	
+	public void ClickOnPaginationButtonUntilDisabledUsingListElement(int position ) {
+		PaginationUtils paginationUtils = new PaginationUtils(driver);
+		paginationUtils.clickPagination("last", position);
+		paginationUtils.clickPagination("first", position);
+		paginationUtils.clickPagination("next", position);
+		paginationUtils.clickPagination("previous", position);
+	}
+	
+	public void ClickElementUsingJavaScript(WebElement element) {
+	    try {
+	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+	    } catch (ElementClickInterceptedException e) {
+	        ((JavascriptExecutor) driver)
+	            .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+	        ((JavascriptExecutor) driver)
+	            .executeScript("arguments[0].click();", element);
+	    }
+	}
+	
+	public int generateRandomNumber(List<WebElement> elements) {
+		int size = elements.size();
+
+		Random random = new Random();
+		return random.nextInt(size -1);
 	}
 
 }
