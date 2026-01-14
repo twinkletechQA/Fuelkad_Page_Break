@@ -10,7 +10,8 @@ import baseclass.Base;
 
 public class AdminAllMerchantReport extends Base {
 
-	static WebDriver driver;
+	String AdminBaseUrl = prop.getProperty("adminUrl");
+
 
 	@FindBy(xpath = "//*[@id=\"navbarsExample03\"]/ul/li[1]/a")
 	private WebElement DASHBOARD_MENU;
@@ -20,6 +21,10 @@ public class AdminAllMerchantReport extends Base {
 
 	@FindBy(xpath = "//*[@id=\"merchantId\"]")
 	private WebElement FILTER_MERCHANT_DD_FIELD;
+	
+	@FindBy(id ="vendorLocation")
+	private WebElement MerchantStationDropdown;
+	
 
 	@FindBy(xpath = "//*[@id=\"frmTransactions\"]/div/div/div[2]/div/div/div[1]/button")
 	private WebElement SEARCH_BTN;
@@ -56,81 +61,87 @@ public class AdminAllMerchantReport extends Base {
 
 	@FindBy(xpath = "//*[@id=\"CustomerPurchase_wrapper\"]/div[1]/button")
 	private WebElement CUSTOMER_PURCHASE_EXPORT_CSV_FIELD;
+	
+	@FindBy(id = "taxInvoiceCommissionButton")
+	private WebElement TaxInvoice_Commissions;
 
 	public AdminAllMerchantReport(WebDriver driver) {
-		AdminAllMerchantReport.driver = driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void testCase1() {
+	public void ClickOnMenu() {
 		DASHBOARD_MENU.click();
 		SUB_DASHBOARD_MENU.click();
-		Assert.assertEquals(checkURL(driver), "GetMerchantReport.do");
+		verifyUrlIsEqual(AdminBaseUrl+"GetMerchantReport.do", "CLICK_MAIN_MENU");
 	}
 	
-	private void MerchantFilterDropdown() {
-		selectByIndex(FILTER_MERCHANT_DD_FIELD, 1);
+	public void MerchantFilterDropdown() {
+		SelectRandomDropdownFieldvalue(FILTER_MERCHANT_DD_FIELD);
 	}
 	
-	private void ClickSearchButton() {
+	public void ClickSearchButton() {
 		SEARCH_BTN.click();
-		Assert.assertEquals(checkURL(driver), "SearchMerchantReport.do");
+		verifyUrlIsEqual(AdminBaseUrl+"SearchMerchantReport.do", "SEARCH");
 	}
 	
-	private void ClickResetButton() {
+	public void ClickResetButton() {
 		RESET_BTN.click();
-		Assert.assertEquals(checkURL(driver), "GetMerchantReport.do");
+		verifyUrlIsEqual(AdminBaseUrl+"GetMerchantReport.do", "RESET");
 
 	}
 	
-	private void ClickPDF() {
+	public void ClickPDF() {
     EXPORT_PDF_FIELD.click();
 		
 	}
 		
-	private void ClickCSV() {
+	public void ClickCSV() {
     EXPORT_CSV_FIELD.click();
 		
 	}
 	
 	
-	private void WeeklyPeriodButton() {
+	public void WeeklyPeriodButton() {
 	WEEKLY_PERIOD_BTN.click();
 	WEEKLY_PERIOD_EXPORT_CSV_FIELD.click();	
 		
 	}
-	private void CustomerUsageButton() {
+	public void CustomerUsageButton() {
 	CUSTOMER_USAGE_BTN.click();
 	CUSTOMER_USAGE_EXPORT_CSV_FIELD.click();		
 		
 	}
 	
 
-	private void CustomerLoadTransactions() {
+	public void CustomerLoadTransactions() {
 	CUSTOMER_LOAD_TRANS_BTN.click();
 	CUSTOMER_LOAD_TRANS_EXPORT_CSV_FIELD.click();
 		
 		
 	}
 	
-	private void CustomerPurchases() {
+	public void CustomerPurchases() {
 	CUSTOMER_PURCHASE_BTN.click();
 	CUSTOMER_PURCHASE_EXPORT_CSV_FIELD.click();		
 		
 	}
-	private void TaxInvoiceCommissions() {
-		
+	public void TaxInvoiceCommissions() {
+	TaxInvoice_Commissions.click();
 		
 	}
-		
+	
+	
+	public void WeeklyPeriodwithSations() {
+	TaxInvoice_Commissions.click();
+	CUSTOMER_LOAD_TRANS_EXPORT_CSV_FIELD.click();
 
-
-
-
-
-
-
-
-	}
+	  }
+	  
+	  
+	  
+	 	 
+	
+	
 
 }

@@ -78,7 +78,4 @@ public class AllMerchantReport extends Base {
 	}
 
 
-
-	
-
 }

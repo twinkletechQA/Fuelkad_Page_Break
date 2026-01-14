@@ -260,12 +260,12 @@ public class Base {
 		
 	}
 	
-	protected void verifyUrlIsEqual(String expectedUrl) {
+	protected void verifyUrlIsEqual(String expectedUrl, String action) {
 
 	    String actualUrl = driver.getCurrentUrl();
 
 	    if (!actualUrl.equals(expectedUrl)) {
-	        System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	        System.out.println(action+ ": URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
 	       
 	    }
 
@@ -275,10 +275,10 @@ public class Base {
 	    );
 	}
 	
-	protected void verifyIsEqual(String actualUrl, String expectedUrl) {
+	protected void verifyIsEqual(String actualUrl, String expectedUrl,String action) {
 
 	    if (!actualUrl.equals(expectedUrl)) {
-	    	System.out.println("URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
+	        System.out.println(action+ ": URL MISMATCH DETECTED -- >" +"EXPECTED URL:["+ expectedUrl +"] "+"ACTUAL URL:["+ actualUrl+"]");
 	       
 	    }
 

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Vignesh\AppData\Local\Temp\testng-eclipse-2005581185\testng-customsuite.xml</span>
+                    <span>C:\Users\TSS-LT-18\AppData\Local\Temp\testng-eclipse--1450201659\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="checkDashboardTest">checkDashboardTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +117,37 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testcase.MerchantpageBreakTest" class="method navigator-link" hash-for-method="checkSetFuelPriceTest">checkSetFuelPriceTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckAllMerchantReport">CheckAllMerchantReport</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testcase.MerchantpageBreakTest" class="method navigator-link" hash-for-method="dashboardPageBreak">dashboardPageBreak</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckDailyMerchantReport">CheckDailyMerchantReport</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckFinanceReport">CheckFinanceReport</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckFuelkadCustomers">CheckFuelkadCustomers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckTopupCustomers">CheckTopupCustomers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="CheckTransactionSummary">CheckTransactionSummary</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.AdminpageBreakTest" class="method navigator-link" hash-for-method="dashboardPageBreak">dashboardPageBreak</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -123,17 +162,104 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testcase.MerchantpageBreakTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">testcase.AdminpageBreakTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkSetFuelPriceTest">
-                  </a> <!-- checkSetFuelPriceTest -->
-                  <span class="method-name">checkSetFuelPriceTest</span>
+                  <a name="checkDashboardTest">
+                  </a> <!-- checkDashboardTest -->
+                  <span class="method-name">checkDashboardTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [SearchFuelCardUsageStatistics.do] but found [AdminDashboard.do]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at individualPages.AdminDashboard.ClickSearchButton(AdminDashboard.java:48)
+	at testcase.AdminpageBreakTest.checkDashboardTest(AdminpageBreakTest.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testcase.AdminpageBreakTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckAllMerchantReport">
+                  </a> <!-- CheckAllMerchantReport -->
+                  <span class="method-name">CheckAllMerchantReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckDailyMerchantReport">
+                  </a> <!-- CheckDailyMerchantReport -->
+                  <span class="method-name">CheckDailyMerchantReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckFinanceReport">
+                  </a> <!-- CheckFinanceReport -->
+                  <span class="method-name">CheckFinanceReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckFuelkadCustomers">
+                  </a> <!-- CheckFuelkadCustomers -->
+                  <span class="method-name">CheckFuelkadCustomers</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckTopupCustomers">
+                  </a> <!-- CheckTopupCustomers -->
+                  <span class="method-name">CheckTopupCustomers</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckTransactionSummary">
+                  </a> <!-- CheckTransactionSummary -->
+                  <span class="method-name">CheckTransactionSummary</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -148,7 +274,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Vignesh\AppData\Local\Temp\testng-eclipse-2005581185\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\TSS-LT-18\AppData\Local\Temp\testng-eclipse--1450201659\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -157,7 +283,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testcase.MerchantpageBreakTest&quot;/&gt;
+      &lt;class name=&quot;testcase.AdminpageBreakTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -197,20 +323,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkSetFuelPriceTest')
-data.setCell(0, 2, 'testcase.MerchantpageBreakTest')
-data.setCell(0, 3, 28531);
+data.setCell(0, 1, 'CheckDailyMerchantReport')
+data.setCell(0, 2, 'testcase.AdminpageBreakTest')
+data.setCell(0, 3, 11829);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'dashboardPageBreak')
-data.setCell(1, 2, 'testcase.MerchantpageBreakTest')
-data.setCell(1, 3, 4715);
+data.setCell(1, 1, 'CheckFuelkadCustomers')
+data.setCell(1, 2, 'testcase.AdminpageBreakTest')
+data.setCell(1, 3, 10873);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'CheckFinanceReport')
+data.setCell(2, 2, 'testcase.AdminpageBreakTest')
+data.setCell(2, 3, 9131);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'CheckAllMerchantReport')
+data.setCell(3, 2, 'testcase.AdminpageBreakTest')
+data.setCell(3, 3, 6349);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'CheckTransactionSummary')
+data.setCell(4, 2, 'testcase.AdminpageBreakTest')
+data.setCell(4, 3, 5677);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'CheckTopupCustomers')
+data.setCell(5, 2, 'testcase.AdminpageBreakTest')
+data.setCell(5, 3, 5631);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'checkDashboardTest')
+data.setCell(6, 2, 'testcase.AdminpageBreakTest')
+data.setCell(6, 3, 4973);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'dashboardPageBreak')
+data.setCell(7, 2, 'testcase.AdminpageBreakTest')
+data.setCell(7, 3, 291);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -236,22 +386,48 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testcase.MerchantpageBreakTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testcase.AdminpageBreakTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">dashboardPageBreak</span>
-                <span class="method-start">9961 ms</span>
+                <span class="method-start">11801 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">checkSetFuelPriceTest</span>
-                <span class="method-start">14696 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkDashboardTest</span>
+                <span class="method-start">12102 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckFinanceReport</span>
+                <span class="method-start">17080 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckAllMerchantReport</span>
+                <span class="method-start">26214 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckDailyMerchantReport</span>
+                <span class="method-start">32567 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckFuelkadCustomers</span>
+                <span class="method-start">44398 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckTopupCustomers</span>
+                <span class="method-start">55273 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CheckTransactionSummary</span>
+                <span class="method-start">60905 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">43238 ms</span>
+                <span class="method-start">66585 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

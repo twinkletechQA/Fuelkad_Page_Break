@@ -52,7 +52,7 @@ public class AdminpageBreakTest extends Base{
 //		financeReport.testCase1();
 //		allMerchantReport.testCase1();
 		
-		fuelkadCustomer.testCase1(); 
+//		fuelkadCustomer.testCase1(); 
 		
 	}
 

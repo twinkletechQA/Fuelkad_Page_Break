@@ -73,8 +73,8 @@ public class MerFuelPrice extends Base {
 	
 	public void clickOnHistyoryOfFuelPrice() {
 		ViewHistoryOFFuelPriceBtn.click();
-		verifyUrlIsEqual(MerchantBaseUrl + "DownloadFuelAmountHistory.do");
-		verifyIsEqual(FuelPriceHistoryTitle.getText(), "Fuel Price History");
+		verifyUrlIsEqual(MerchantBaseUrl + "DownloadFuelAmountHistory.do","");
+		verifyIsEqual(FuelPriceHistoryTitle.getText(), "Fuel Price History","");
 		clickCSV_Download();
 		clickPDF_Download();
 		clickOnCancelBtn();
@@ -85,7 +85,7 @@ public class MerFuelPrice extends Base {
 			FuelPriceListEditBtns.get(j).click();
 		}
 		cancelBtn.click();
-		verifyUrlIsEqual(MerchantBaseUrl + "SetFuelPriceByMerchant.do");
+		verifyUrlIsEqual(MerchantBaseUrl + "SetFuelPriceByMerchant.do","");
 	}
 
 }

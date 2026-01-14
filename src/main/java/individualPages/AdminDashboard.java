@@ -27,12 +27,6 @@ public class AdminDashboard extends Base {
 	@FindBy(xpath = "//*[@id=\"flatpickr\"]")
 	private WebElement FILTER_DATE_FIELD;
 
-	@FindBy(xpath = "/html/body/div[4]/div[2]/div/div[2]/div/span[3]")
-	private WebElement FILTER_FROM_DATE;
-
-	@FindBy(xpath = "/html/body/div[4]/div[2]/div/div[2]/div/span[32]")
-	private WebElement FILTER_TO_DATE;
-
 	public AdminDashboard(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -45,9 +39,7 @@ public class AdminDashboard extends Base {
 		
 	}
 	public void SelectDatesFilter() {
-		FILTER_DATE_FIELD.click();
-		FILTER_FROM_DATE.click();
-		FILTER_TO_DATE.click();
+		  selectTodayAndPreviousMonthDate(FILTER_DATE_FIELD);
 
 	}
 	
@@ -58,10 +50,9 @@ public class AdminDashboard extends Base {
 	}
 	
 	public void ClickResetButton() {
-		verifyUrlIsEqual(AdminBaseUrl + "SearchFuelCardUsageStatisticsst.do");
 		RESET_BTN.click();
 		Assert.assertEquals(checkURL(driver), "AdminDashboard.do");
-		verifyUrlIsEqual(AdminBaseUrl + "AdminDashboard.do");
+		verifyUrlIsEqual(AdminBaseUrl + "AdminDashboard.do", "RESET");
 	}
 
 }
