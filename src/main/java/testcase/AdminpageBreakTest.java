@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import baseclass.Base;
@@ -30,6 +31,7 @@ import individualPages.AdminVehicleMakeAndModel;
 import pages.AdminPageBreak;
 import pages.LoginPage;
 
+@Listeners(listeners.TestListener.class)
 public class AdminpageBreakTest extends Base {
 
 	public AdminpageBreakTest() {

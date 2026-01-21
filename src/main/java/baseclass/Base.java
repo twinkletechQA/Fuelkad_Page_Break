@@ -34,7 +34,7 @@ import Utility.PaginationUtils;
 public class Base {
 
 	public SoftAssert softAssert;
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static Properties prop;
 	public static Properties dataProp;
 	public static Properties urlProp;
